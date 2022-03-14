@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Renci.SshNet;
+using System.Threading;
 
 namespace _2_semester_obl_2
 {
@@ -22,7 +24,42 @@ namespace _2_semester_obl_2
     {
         public MainWindow()
         {
+            Thread serverOne = new Thread(RunServer);
+            Thread serverTwo = new Thread(RunServer);
+            Thread serverThree = new Thread(RunServer);
+
+            ConnectionInfo connectionInfoOne = new ConnectionInfo("192.168.0.103", "ja", new PasswordAuthenticationMethod("ja", "cle555"));
+            serverOne.Start(connectionInfoOne);
+
             InitializeComponent();
+
+        }
+        static void RunServer(object ci) //skal ikke være her lol
+        {
+            ConnectionInfo c = (ConnectionInfo)ci;
+            using (SshClient client = new SshClient(c))
+            {
+                try
+                {
+                    client.Connect();
+
+                    if (client.IsConnected)
+                    {
+                        //command to feed
+                        var command = client.CreateCommand(Console.ReadLine());
+                        var result = command.Execute();
+                        command.Execute();
+
+                        //write result to 'whatever'
+                        Console.WriteLine(result);
+                    }
+                }
+                catch (Exception)
+                {
+                }
+            }
         }
     }
+
+
 }
