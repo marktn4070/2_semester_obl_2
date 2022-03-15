@@ -1,13 +1,105 @@
-﻿<Window x:Class="_2_semester_obl_2.MainWindow"
+﻿<Window x:Class="LinuxThreadAssignment.MainWindow"
+        xmlns:uc ="clr-namespace:LinuxThreadAssignment"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:_2_semester_obl_2"
+        xmlns:local="clr-namespace:LinuxThreadAssignment"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Cyberspace Interchange" Height="500" Width="700" ResizeMode="NoResize">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="543,200,0,0" VerticalAlignment="Top" Width="75"/>
+        <StackPanel Margin="0,0,9.6,0.4">
 
+
+            <StackPanel Background="Black" HorizontalAlignment="Left" Height="40" Margin="0,95,0,0" VerticalAlignment="Top" Width="700">
+                <TextBlock Foreground="white" Text="Server" HorizontalAlignment="Center" FontWeight="DemiBold" FontSize="22"/>
+            </StackPanel>
+            <!-- Add new server MainPage -->
+            <Button x:Name="Mainpagebutton_Add_New_Server" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Add server" Click="BUTTON_Add_server" Margin="0,10,0,0" Width="100"/>
+
+            <!-- ServerList Stackpanel-->
+            <StackPanel x:Name="ServerListStackPanel" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Visibility="Visible">
+                <ScrollViewer>
+                    <!-- Added programatically -->
+
+                </ScrollViewer>
+            </StackPanel>
+
+            <!-- Add new Server Page-->
+            <StackPanel x:Name="AddNewServerStackPanel" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Width="700" Visibility="Collapsed">
+
+                <StackPanel Orientation="Vertical" Width="700" Margin="0,5,0,0">
+                    <TextBlock Text="Hostname/IP" HorizontalAlignment="Center" FontWeight="DemiBold"/>
+                    <TextBox x:Name="addnew_HostnameIP" Text="45.76.43.221" Width="200" HorizontalAlignment="Center">
+                        <TextBox.Background>
+                            <LinearGradientBrush EndPoint="0.3,1" StartPoint="0.8,0">
+                                <GradientStop Color="White" Offset="0"/>
+                                <GradientStop Color="White" Offset="0.503"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                    </TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="0,5,0,0">
+                    <TextBlock Text="User" HorizontalAlignment="Center" FontWeight="DemiBold"/>
+                    <TextBox x:Name="addnew_User" Text="root" Width="200" HorizontalAlignment="Center">
+                        <TextBox.Background>
+                            <LinearGradientBrush EndPoint="0.3,1" StartPoint="0.8,0">
+                                <GradientStop Color="White" Offset="0"/>
+                                <GradientStop Color="White" Offset="0.506"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                    </TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="0,5,0,0">
+                    <TextBlock Text="Password" HorizontalAlignment="Center" FontWeight="DemiBold"/>
+                    <PasswordBox x:Name="addnew_Password" Password="j}7E(Ma38tMg8_ux" Width="200" HorizontalAlignment="Center">
+                        <PasswordBox.Background>
+                            <LinearGradientBrush EndPoint="0.3,1" StartPoint="0.8,0">
+                                <GradientStop Color="White" Offset="0"/>
+                                <GradientStop Color="White" Offset="0.501"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </PasswordBox.Background>
+                    </PasswordBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="0,5,0,0">
+                    <TextBlock Text="Port" HorizontalAlignment="Center" FontWeight="DemiBold"/>
+                    <TextBox x:Name="addnew_Port" Text="22" Width="200" HorizontalAlignment="Center">
+                        <TextBox.Background>
+                            <LinearGradientBrush EndPoint="0.3,1" StartPoint="0.8,0">
+                                <GradientStop Color="White" Offset="0"/>
+                                <GradientStop Color="White" Offset="0.5"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                    </TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="0,5,0,0">
+                    <Button Content="Add" Width="200" Click="Add" HorizontalAlignment="Center"/>
+                    <Button Content="Main Page" Width="200" Click="GoToMainPage" HorizontalAlignment="Center"/>
+                </StackPanel>
+
+            </StackPanel>
+
+
+            <TextBlock x:Name="TESTBLOCK" Width="200" Height="260" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="White"><InlineUIContainer>
+                </InlineUIContainer></TextBlock>
+
+        </StackPanel>
+
+
+        <StackPanel  VerticalAlignment="Bottom">
+            <!--<uc:SickBeats>
+                
+            </uc:SickBeats>-->
+
+
+        </StackPanel>
     </Grid>
 </Window>
