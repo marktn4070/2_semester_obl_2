@@ -17,6 +17,7 @@
             <!-- Add new server MainPage -->
             <Button x:Name="Mainpagebutton_Add_New_Server" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Add server" Click="BUTTON_Add_server" Margin="0,10,0,0" Width="100"/>
 
+            
             <!-- ServerList Stackpanel-->
             <StackPanel x:Name="ServerListStackPanel" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Visibility="Visible">
                 <ScrollViewer>
